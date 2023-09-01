@@ -207,6 +207,7 @@ public class Polinomio {
             nuevo[i] = vector[i];
             i++;
         }
+        Ajustar();
     }
 
     void Eliminar() {

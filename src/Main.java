@@ -13,9 +13,10 @@ public class Main {
                             + "1. Mostrar Forma Vector \n"
                             + "2. Mostrar Forma Natural\n"
                             + "3. Operaciones con Polinomios\n"
-                            + "4. Insertar Monomio\n"
-                            + "5. Eliminar monomio\n"
-                            + "6. Salir"));
+                            + "4. Evaluar Polinomio\n"
+                            + "5. Insertar Monomio\n "
+                            + "6. Eliminar monomio\n"
+                            + "7. Salir"));
 
             switch (opcion) {
                 case 1:
@@ -35,7 +36,8 @@ public class Main {
                                 "     ***** Bienvenido al Menu Operaciones *****     \n            Que Operacion desea Realizar?          \n"
                                         + "1. Suma de Polinomios \n"
                                         + "2. Resta de Polinomios\n"
-                                        + "3. Salir"));
+                                        + "3. Multiplicación de polinomios\n"
+                                        + "4. Salir"));
 
                         switch (opcionOp) {
                             case 1:
@@ -65,9 +67,12 @@ public class Main {
                     funcional.Evaluar();
                     break;
                 case 5:
-                    funcional.Eliminar();
+                    funcional=funcional.Insertar(Coeficiente_Exponente());
                     break;
                 case 6:
+                    funcional.Eliminar();
+                    break;
+                case 7:
                     controlMenu = false;
                     JOptionPane.showMessageDialog(null, "Gracias por utilizar nuestro sistema: ");
                     break;
@@ -117,7 +122,7 @@ public class Main {
 
             } else if (vectorCaracter[i] == 'x') {
 
-                if (s == "-" || s == "+") {
+                if (s == "-" || s == "+" || s == "") {
                     s = s + "1";
                 }
                 vectorString[k] = s;
