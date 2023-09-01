@@ -13,8 +13,8 @@ public class Main {
                             + "1. Mostrar Forma Vector \n"
                             + "2. Mostrar Forma Natural\n"
                             + "3. Operaciones con Polinomios\n"
-                            + "4. Evaluar Polinomio\n"
-                            + "5. Insertar Monomio\n"
+                            + "4. Insertar Monomio\n"
+                            + "5. Eliminar monomio\n"
                             + "6. Salir"));
 
             switch (opcion) {
@@ -35,8 +35,7 @@ public class Main {
                                 "     ***** Bienvenido al Menu Operaciones *****     \n            Que Operacion desea Realizar?          \n"
                                         + "1. Suma de Polinomios \n"
                                         + "2. Resta de Polinomios\n"
-                                        + "3. Multiplicacion de Polinomios\n"
-                                        + "4. Salir"));
+                                        + "3. Salir"));
 
                         switch (opcionOp) {
                             case 1:
@@ -47,11 +46,7 @@ public class Main {
                                 funcional.Restar(poli);
                                 break;
 
-                            case 3: 
-                            funcional.Multiplicar(poli);
-                            break;
-
-                            case 4:
+                            case 3:
                                 controlOperaciones = false;
                                 break;
 
@@ -63,13 +58,11 @@ public class Main {
                     } while (controlOperaciones);
                     break;
                 case 4:
-                    funcional.Evaluar();
-                    break;
-
-                    case 5:
                     funcional = funcional.Insertar(Coeficiente_Exponente());
                     break;
-
+                case 5:
+                    funcional.Eliminar();
+                    break;
                 case 6:
                     controlMenu = false;
                     JOptionPane.showMessageDialog(null, "Gracias por utilizar nuestro sistema: ");
@@ -87,7 +80,7 @@ public class Main {
         boolean controlPoli = true;
         String cadena = "";
         do {
-            cadena = "-7x^4+2x+2";
+            cadena = JOptionPane.showInputDialog("Ingrese el polinomio.\n Nota: utilice ^ para indicar el elevado y la X como variable");
             if (cadena != "") {
                 controlPoli = false;
             }
